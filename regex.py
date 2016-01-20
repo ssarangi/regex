@@ -88,8 +88,8 @@ class Literal:
         return self.c == other.c
 
     def __str__(self):
-        str = "Literal(%s)" % self.c
-        return str
+        s = "Literal(%s)" % self.c
+        return s
 
     __repr__ = __str__
 
@@ -103,8 +103,8 @@ class Or:
         return self.lhs == other.lhs and self.rhs == other.rhs
 
     def __str__(self):
-        str = "Or(%s, %s)" % (str(self.lhs), str(self.rhs))
-        return str
+        s = "Or(%s, %s)" % (str(self.lhs), str(self.rhs))
+        return s
 
     __repr__ = __str__
 
@@ -119,8 +119,8 @@ class Concat:
         return self.lhs == other.lhs and self.lhs == other.rhs
 
     def __str__(self):
-        str = "Concat(%s, %s)" % (str(self.lhs), str(self.rhs))
-        return str
+        s = "Concat(%s, %s)" % (str(self.lhs), str(self.rhs))
+        return s
 
     __repr__ = __str__
 
@@ -134,8 +134,8 @@ class Repeat:
         return self.expr == other.expr
 
     def __str__(self):
-        str = "Repeat(%s)" % str(self.expr)
-        return str
+        s = "Repeat(%s)" % str(self.expr)
+        return s
 
     __repr__ = __str__
 
@@ -150,8 +150,8 @@ class Plus:
         return self.expr == other.expr
 
     def __str__(self):
-        str = "Plus(%s)" % str(self.expr)
-        return str
+        s = "Plus(%s)" % str(self.expr)
+        return s
 
     __repr__ = __str__
 
@@ -293,8 +293,10 @@ class Regex:
 
 def main():
     compiled_regex = Regex()
-    compiled_regex.compile("ab*|c+d")
-    matches = compiled_regex.matches("ccccccccccd")
+    # compiled_regex.compile("ab*|c+d")
+    compiled_regex.compile("a*")
+    # matches = compiled_regex.matches("ccccccccccd")
+    matches = compiled_regex.matches("ab")
     print(matches)
 
 if __name__ == "__main__":
